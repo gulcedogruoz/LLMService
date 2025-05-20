@@ -111,7 +111,7 @@ Add your Claude API Key and JWT token to `appsettings.json` or environment varia
 
 ## 📹 Demo Video
 
-[▶️ Watch Demo Video](https://your-video-link.com)
+[▶️ Watch Demo Video](https://youtu.be/j5mACjZvCzA)
 
 
 ---
