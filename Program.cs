@@ -4,15 +4,24 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Claude API Key'i config'ten al
-string claudeApiKey = builder.Configuration["Claude:ApiKey"];
 
+string claudeApiKey = builder.Configuration["Claude:ApiKey"];
+string jwtToken = builder.Configuration["Claude:JwtToken"];
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ClaudeService>(sp => new ClaudeService(claudeApiKey));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy
+            .WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
+builder.Services.AddSingleton<ClaudeService>(sp => new ClaudeService(claudeApiKey, jwtToken));
 
 var app = builder.Build();
 
@@ -21,6 +30,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 app.MapControllers();
