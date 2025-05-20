@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -23,7 +22,7 @@ public class AiAgentController : ControllerBase
         try
         {
             var result = await _claudeService.GetIntentFromMessage(input.Message);
-            return Ok(result);
+            return Ok(result); 
         }
         catch (Exception ex)
         {
