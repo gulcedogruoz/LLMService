@@ -38,7 +38,7 @@ The Claude prompt returns a JSON object with the following structure:
   "parameters": {
     "flightNumber": "TK123",
     "date": "2024-05-20T10:00:00Z",
-    "passengerNames": ["Gulce Dgruoz", "Barış Ceyhan"]
+    "passengerNames": ["Gulce Dogruoz", "Barış Ceyhan"]
   }
 }
 ```
