@@ -38,10 +38,10 @@ The Claude prompt returns a JSON object with the following structure:
   "parameters": {
     "flightNumber": "TK123",
     "date": "2024-05-20T10:00:00Z",
-    "passengerNames": ["Ali Veli", "Ayşe Yılmaz"]
+    "passengerNames": ["Gulce Dgruoz", "Barış Ceyhan"]
   }
 }
-
+```
 ---
 
 ### ✅ Supported Intents & Parameters
