@@ -1,5 +1,6 @@
 public class LLMResult
 {
-    public string intent { get; set; }
-    public Dictionary<string, object> parameters { get; set; }
+    public string Intent { get; set; } = "";
+    public Dictionary<string, object> Parameters { get; set; } = new();
+    public string? Response { get; set; } 
 }
